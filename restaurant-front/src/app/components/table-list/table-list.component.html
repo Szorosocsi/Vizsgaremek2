@@ -1,0 +1,20 @@
+<div *ngFor="let table of tables" class="table-block">
+
+<h3>{{table.name}}</h3>
+
+<div class="times">
+
+<button
+*ngFor="let slot of table.slots"
+(click)="slotClick(table.name, slot)">
+{{slot}}
+</button>
+
+</div>
+
+<app-table-list
+*ngIf="table.children"
+[tables]="table.children">
+</app-table-list>
+
+</div>

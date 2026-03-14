@@ -1,0 +1,144 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+padding-top: 120px;
+background-image: url("assets/westernhatter.jpg");
+background-size: cover;
+background-position:center;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(5px);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#7ed957;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#7ed957;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+/*background-image: url("./westernhatter.jpg");
+background-size: cover;
+background-position:center;
+*/
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:15px 35px;
+font-size:18px;
+background:#7ed957;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+}
+
+/* ABOUT */
+
+.about{
+padding:80px;
+text-align:center;
+max-width:800px;
+margin:auto;
+}
+
+.about h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+text-align:center;
+padding:20px;
+}
+
+.booking-container{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.booking-container form{
+background:white;
+color:black;
+padding:40px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+width:350px;
+}
+
+.booking-container input{
+padding:10px;
+margin:10px 0;
+}
+
+.booking-container button{
+padding:12px;
+background:#7ed957;
+border:none;
+cursor:pointer;
+}
+
+.connection {
+  text-align: center;
+  margin: 40px 0;      /* tetszőleges távolság a többi tartalomtól */
+  color: black;
+  font-family: Arial, sans-serif;
+}
