@@ -1,0 +1,184 @@
+<!-- Header with Reservation Form -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="flex items-center justify-between gap-4">
+      <!-- Logo / Restaurant Name -->
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets%2Fb9a358999ff34a53af3831a36deceda0%2Ff43f37d5e95641798536e30ddecf5d51?format=webp&width=800&height=1200"
+          alt="Rósza Kávéház Logo"
+          class="h-12 w-auto"
+        />
+        <div>
+          <h1 class="text-xl font-bold bg-gradient-to-r from-rose-600 to-blue-600 bg-clip-text text-transparent">Róza Kávéház</h1>
+          <p class="text-xs text-gray-500">Table Reservations</p>
+        </div>
+      </div>
+
+      <!-- Reservation Form (Right Side) -->
+      <form
+        (ngSubmit)="handleReservation($event)"
+        class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-end flex-wrap sm:flex-nowrap"
+      >
+        <!-- Date Input -->
+        <div class="flex flex-col min-w-[140px]">
+          <label class="text-xs font-semibold text-gray-700 mb-1">Date</label>
+          <input
+            type="date"
+            [(ngModel)]="reservationDate"
+            [min]="getTodayDate()"
+            name="date"
+            required
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+          />
+        </div>
+
+        <!-- Time Input -->
+        <div class="flex flex-col min-w-[110px]">
+          <label class="text-xs font-semibold text-gray-700 mb-1">Time</label>
+          <input
+            type="time"
+            [(ngModel)]="reservationTime"
+            name="time"
+            required
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+          />
+        </div>
+
+        <!-- Guest Count Input -->
+        <div class="flex flex-col min-w-[100px]">
+          <label class="text-xs font-semibold text-gray-700 mb-1">Guests</label>
+          <select
+            [(ngModel)]="guestCount"
+            name="guests"
+            required
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+          >
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6">6 Guests</option>
+            <option value="7">7 Guests</option>
+            <option value="8">8+ Guests</option>
+          </select>
+        </div>
+
+        <!-- Name Input -->
+        <div class="flex flex-col min-w-[120px]">
+          <label class="text-xs font-semibold text-gray-700 mb-1">Name</label>
+          <input
+            type="text"
+            [(ngModel)]="guestName"
+            name="name"
+            placeholder="Your name"
+            required
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+          />
+        </div>
+
+        <!-- Email Input -->
+        <div class="flex flex-col min-w-[150px]">
+          <label class="text-xs font-semibold text-gray-700 mb-1">Email</label>
+          <input
+            type="email"
+            [(ngModel)]="guestEmail"
+            name="email"
+            placeholder="your&#64;email.com"
+            required
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white font-medium rounded-lg transition-colors duration-200 whitespace-nowrap"
+        >
+          Reserve
+        </button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="min-h-screen">
+  <!-- Hero Section with Restaurant Picture -->
+  <section class="w-full bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <!-- Restaurant Picture -->
+      <div
+        class="w-full aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg mb-8"
+      >
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets%2Fb9a358999ff34a53af3831a36deceda0%2F9eb678a5ab184c76b7a2c85ce299ea8f?format=webp&width=800&height=1200"
+          alt="Róza Kávéház Restaurant"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Restaurant Info -->
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            Welcome to Róza Kávéház
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl">
+            Experience exceptional dining in our charming restaurant. Reserve your table in just a few clicks
+            and enjoy an unforgettable meal with us.
+          </p>
+        </div>
+
+        <!-- Quick Info Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="flex items-center gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Open Daily</h3>
+                <p class="text-sm text-gray-600">9:00 AM - 10:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="flex items-center gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0zM16 20H4v-2a4 4 0 018-8h4a4 4 0 018 8v2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">50+ Seats</h3>
+                <p class="text-sm text-gray-600">Comfortable seating</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="flex items-center gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Quick Booking</h3>
+                <p class="text-sm text-gray-600">Instant confirmation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Router Outlet for future pages -->
+<router-outlet></router-outlet>
