@@ -1,0 +1,18 @@
+Induláskor a Spring Boot csinál egy proxy osztályt
+
+Kb ez jön létre a háttérben:
+
+
+    class ReservationRepositoryImpl 
+       implements ReservationRepository {
+
+    public Reservation save(Reservation r) {
+        // Hibernate EntityManager használata
+    }
+
+    public List<Reservation> findAll() {
+        // SQL generálás
+    }
+}
+
+Spring generálja runtime
